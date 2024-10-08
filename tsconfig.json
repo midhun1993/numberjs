@@ -5,7 +5,8 @@
       "declaration": true,             // Generate declaration files
       "outDir": "package/numberjs/dist",              // Output directory for compiled files
       "rootDir": "./src",              // Root directory of source files
-      "strict": true                   // Enable strict type checking
+      "strict": true,                  // Enable strict type checking
+      "moduleResolution": "node"
     },
     "include": ["src/**/*.ts"],       // Include all .ts files in src
     "exclude": ["node_modules"]       // Exclude node_modules
