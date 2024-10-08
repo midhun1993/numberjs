@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "target": "ES6",                // Set the ECMAScript target version
+      "module": "ESNext",             // Use ESNext for module resolution
+      "declaration": true,             // Generate declaration files
+      "outDir": "./package/dist",              // Output directory for compiled files
+      "rootDir": "./src",              // Root directory of source files
+      "strict": true                   // Enable strict type checking
+    },
+    "include": ["src/**/*.ts"],       // Include all .ts files in src
+    "exclude": ["node_modules"]       // Exclude node_modules
+  }
+  

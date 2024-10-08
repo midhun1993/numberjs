@@ -1,0 +1,19 @@
+{
+    "name": "numberjs",
+    "version": "1.0.0",
+    "description": "Like numpy",
+    "main": "dist/cjs/index.js",
+    "module": "dist/esm/index.js",
+    "types": "dist/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/midhun1993/numberjs.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/midhun1993/numberjs/issues"
+    },
+    "homepage": "https://github.com/midhun1993/numberjs#readme"
+}
