@@ -1,6 +1,6 @@
 {
-    "name": "numberjs",
-    "version": "1.0.0",
+    "name": "@mathslab/numberjs",
+    "version": "1.0.1",
     "description": "Like numpy",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
