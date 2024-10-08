@@ -130,4 +130,4 @@ dist
 .pnp.*
 
 # package build
-numberjs/dis/*
+./package/numberjs/dis/*

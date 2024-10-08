@@ -2,7 +2,7 @@
     "extends": "./tsconfig.json",
     "compilerOptions": {
       "module": "ESNext",
-      "outDir": "./numberjs/dist/esm"
+      "outDir": "./package/numberjs/dist/esm"
     }
   }
   
