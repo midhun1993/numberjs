@@ -7,6 +7,6 @@ module.exports = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
-  collectCoverage: true, // Optional: If you want coverage reports
+  collectCoverage: false, // Optional: If you want coverage reports
   coverageReporters: ['json', 'lcov', 'text', 'clover'],
 };
