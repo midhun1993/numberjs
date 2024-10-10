@@ -9,7 +9,8 @@
     "build:esm": "tsc -p tsconfig.esm.json",
     "build:main": "tsc -p tsconfig.json",
     "format": "prettier --write src/**/*.ts __tests__/**/*.ts",
-    "test": "jest"
+    "test": "jest",
+    "test:nd": "jest --  __tests__/ndarray.ts"
   },
   "repository": {
     "type": "git",

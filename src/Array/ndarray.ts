@@ -1,5 +1,11 @@
 import { Shape, DType } from './types';
 import * as util from 'util';
+import { LTree } from './ltree';
+
+/**
+ * Define the constants
+ */
+const ROOT_ELEMENT_COUNT = 1;
 export class NDArray {
   shape: number[];
   dtype: DType;
@@ -13,6 +19,10 @@ export class NDArray {
     }
   }
 
+  get ndim() {
+    return this.shape.length;
+  }
+
   setShape(shape: Shape) {
     this.shape = shape;
   }
@@ -22,20 +32,21 @@ export class NDArray {
   }
 
   buildArray() {
-    let arr = []
-    for(let pos =0 ; pos < this.shape.length; pos++){
-      let shapeElem = this.shape[pos];
-      
-    }
+    let shape = this.shape;
+    let ltree = new LTree(shape);
+    return ltree.getTree();
   }
 
-  /**
-   * This function will override the existing console.log behavior
-   * @param depth
-   * @param opts
-   * @returns
-   */
+  setArray(ndarray: any) {
+    if (!Array.isArray(ndarray)) {
+      throw Error('Invalid array');
+    }
+    let tree = ndarray;
+    let ltree = new LTree(tree);
+    let shape = ltree.getShape();
+  }
+
   [util.inspect.custom](depth: any, opts: any) {
-    return [1, 2];
+    return this.buildArray();
   }
 }
