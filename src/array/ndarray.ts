@@ -44,6 +44,7 @@ export class NDArray {
     let tree = ndarray;
     let ltree = new LTree(tree);
     let shape = ltree.getShape();
+    this.setShape(shape);
   }
 
   [util.inspect.custom](depth: any, opts: any) {

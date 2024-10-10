@@ -9,7 +9,7 @@ export class LTree {
     let isTreeExist = false;
     let isTreeMetaExist = false;
     if (shape) {
-      this.shape = shape;
+      this.setShape(shape);
       isTreeMetaExist = true;
     }
 
@@ -21,7 +21,7 @@ export class LTree {
       this.constructLogicTree();
     }
     if (!isTreeMetaExist) {
-      this.extractMeta();
+      this.analyzeTree();
     }
   }
   setTree(tree: any) {
@@ -30,10 +30,30 @@ export class LTree {
   getTree() {
     return this.tree;
   }
-  getShape(){
-    
+  setShape(shape: any, isPush: boolean = false) {
+    if (isPush) {
+      this.shape.push(shape);
+    } else {
+      this.shape = shape;
+    }
   }
-  extractMeta() {}
+  getShape() {
+    if (!this.shape) {
+      this.analyzeTree();
+    }
+    return this.shape;
+  }
+  analyzeShape(tree: any) {
+    if (!Array.isArray(tree)) {
+      return;
+    }
+    this.setShape(tree.length, true);
+    this.analyzeShape(tree[0]);
+  }
+
+  analyzeTree() {
+    this.analyzeShape(this.tree);
+  }
   constructLogicTree() {
     let tree = [];
     let shapeLength = this.shape.length;
