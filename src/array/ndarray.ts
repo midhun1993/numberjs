@@ -23,6 +23,10 @@ export class NDArray {
     return this.shape.length;
   }
 
+  get size() {
+    return this.shape.reduce((acc, curr) => acc * curr, 1);
+  }
+
   setShape(shape: Shape) {
     this.shape = shape;
   }
@@ -33,7 +37,7 @@ export class NDArray {
 
   buildArray() {
     let shape = this.shape;
-    let ltree = new LTree(shape);
+    let ltree = new LTree({ shape });
     return ltree.getTree();
   }
 
@@ -42,7 +46,7 @@ export class NDArray {
       throw Error('Invalid array');
     }
     let tree = ndarray;
-    let ltree = new LTree(tree);
+    let ltree = new LTree({ tree });
     let shape = ltree.getShape();
     this.setShape(shape);
   }

@@ -4,13 +4,14 @@ import { random } from '../utils/random';
 export class LTree {
   shape: Shape;
   tree: any;
-  constructor(...parts: any[]) {
-    let [shape = null, tree = null] = parts;
+  constructor({ tree = null, shape = null }: any) {
     let isTreeExist = false;
     let isTreeMetaExist = false;
     if (shape) {
       this.setShape(shape);
       isTreeMetaExist = true;
+    } else {
+      this.setShape([]);
     }
 
     if (tree) {

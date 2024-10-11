@@ -12,11 +12,20 @@ describe('N-dimensional Array', () => {
     ]);
     expect(ndarray.ndim).toBe(2);
   });
-  it("ndim: invalid ndim check", () => {
+
+  it('ndim: invalid ndim check', () => {
     let array = numjs.array([
       [1, 2],
       [3, 4],
     ]);
     expect(array.ndim).not.toBe(1);
-  })
+  });
+
+  it('size: valid check', () => {
+    let array = numjs.array([
+      [1, 2],
+      [3, 4],
+    ]);
+    expect(array.size).toBe(4);
+  });
 });
